@@ -1,4 +1,4 @@
-@keyframes appearFromUp {
+@keyframes work-hours-appear-from-up {
   from {
     opacity: 0;
     transform: translateY(-50px);
@@ -9,7 +9,7 @@
   }
 }
 
-@keyframes appearFromDown {
+@keyframes work-hours-appear-from-down {
   from {
     opacity: 0;
     transform: translateY(50px);
@@ -51,7 +51,7 @@
   text-align: center;
   align-items: center;
 
-  animation: appearFromUp 1s;
+  animation: work-hours-appear-from-up 1s;
 }
 
 .app-form-container form {
@@ -74,7 +74,7 @@
   background:rgba(0, 0, 0, 0.4);
   backdrop-filter:blur(50%);
 
-  animation: appearFromDown 1s;
+  animation: work-hours-appear-from-down 1s;
 }
 
 .app-result-container div + div {

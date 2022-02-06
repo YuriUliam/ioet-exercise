@@ -1,4 +1,4 @@
-@keyframes toast-fadein {
+@keyframes toast-item-fadein {
   from {
     right: -120%;
     opacity: 0;
@@ -10,7 +10,7 @@
   }
 }
 
-@keyframes toast-fadeout {
+@keyframes toast-item-fadeout {
   from {
     right: 0%;
     opacity: 1;
@@ -45,7 +45,7 @@
 
   display: flex;
 
-  animation: toast-fadein 1s, toast-fadeout 1s 4s;
+  animation: toast-item-fadein 1s, toast-item-fadeout 1s 4s;
 }
 
 .toast-container + div {

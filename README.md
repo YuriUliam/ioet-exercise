@@ -62,9 +62,11 @@ I used an architecture aimed at `DDD` where the instructions describe the data, 
 
 For the structure, I choose a very friendly one (which are present on most `DDD` applications) where the folder names are related to it's responsabilities and functions.
 
-### Some specific parts
+### Some specific components
 
 For the `FileInput` component I used the `React.forwardRef` function so components which use this input as a child can access the `inputFile value` from it's `ref`.
+
+The `Toast` and `WorkHours` components contains animations of `CSS Keyframes`, where I use it to make the fadeins/fadeouts.
 
 For `toasters` and `work hours calcs.` I used the `React contexts` for split the responsabilities (cause the `WorkHours` component are not responsible to calculate it, but to render it, for example).
 
