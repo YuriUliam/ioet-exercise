@@ -29,8 +29,8 @@ expected output: The amount to pay STEVE is: 245 USD
 ### Okay, but how do I run your project?
 
 You'll need:
-- Node v14.17.X or superior;
-- Yarn 1.22 or superior;
+- Node v14.17.X or higher;
+- Yarn 1.22 or higher;
 - A web browser (duh :p);
 
 1. Download this project using git or downloading the source.
