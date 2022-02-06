@@ -1,0 +1,88 @@
+@keyframes toast-fadein {
+  from {
+    right: -120%;
+    opacity: 0;
+  }
+  
+  to {
+    right: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes toast-fadeout {
+  from {
+    right: 0%;
+    opacity: 1;
+  }
+
+  to {
+    right: -120%;
+    opacity: 0
+  }
+}
+
+.toast-info {
+  background: #ebf8ff;
+  color: #3172b7;
+}
+.toast-success {
+  background: #e6fffa;
+  color: #2e656a;
+}
+.toast-error {
+  background: #fddede;
+  color: #c53030;
+}
+
+.toast-container {
+  width: 360px;
+
+  position: relative;
+  padding: 16px 30px 16px 16px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+
+  animation: toast-fadein 1s, toast-fadeout 1s 4s;
+}
+
+.toast-container + div {
+  margin-top: 8px;
+}
+
+.toast-container > svg {
+  margin: 4px 12px 0 0;
+}
+
+.toast-container div {
+  flex: 1;
+}
+
+.toast-container div p {
+  margin-top: 4px;
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 20px;
+}
+
+.toast-container button {
+  position: absolute;
+  /* width: 18px;
+  height: 18px; */
+  right: 16px;
+  top: 19px;
+  opacity: 0.6;
+  border: 0ch;
+  background: transparent;
+  color: inherit;
+}
+
+.toast-with-description {
+  align-items: center;
+}
+
+.toast-with-description svg {
+  margin-top: 0;
+}

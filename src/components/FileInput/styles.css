@@ -1,0 +1,71 @@
+.app-input-container {
+  padding: 1rem;
+  max-width: 340px;
+  width: 100%;
+
+  border-radius: 0.5rem;
+  background: var(--white);
+  border: 0.2rem solid var(--gray-150);
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: var(--black);
+  transition: background-color 0.2s;
+
+  color: var(--black);
+  
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.app-input-container:hover {
+  background-color: var(--gray-100)
+}
+
+.app-input-filled {
+  border-color: var(--green-500);
+}
+
+.app-input-errored {
+  color: var(--red-500);
+  border-color: var(--red-500);
+}
+
+.app-input-container p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.app-input-container + .app-input-container, .app-input-container + label {
+  margin-top: 0.5rem;
+}
+
+.app-input-container input {
+  display: none;
+}
+.app-input-container .app-tooltip-container {
+  width: 20px;
+  height: 20px;
+}
+
+.app-input-container .app-tooltip-container span {
+  border-color: var(--red-500);
+  border-color: var(--white);
+}
+
+.app-input-container .app-tooltip-container span::before {
+  border-color: var(--red-500) transparent;
+}
+
+.app-input-container .app-tooltip-container span {
+  background: var(--red-500);
+  color: var(--white);
+}
+
+.app-input-container .app-tooltip-container span::before {
+  border-color: var(--red-500) transparent;
+}
