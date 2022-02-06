@@ -26,7 +26,7 @@ describe('readTextFile()', () => {
 })
 
 describe('removeLinebreaks()', () => {
-  it('should remove breakline symbols', async () => {
+  it('should remove breakline symbols', () => {
     const output = removeLinebreaks('Hello\r\nworld!')
 
     expect(output).toEqual('Helloworld!')

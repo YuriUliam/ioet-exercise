@@ -47,25 +47,3 @@
 .app-input-container input {
   display: none;
 }
-.app-input-container .app-tooltip-container {
-  width: 20px;
-  height: 20px;
-}
-
-.app-input-container .app-tooltip-container span {
-  border-color: var(--red-500);
-  border-color: var(--white);
-}
-
-.app-input-container .app-tooltip-container span::before {
-  border-color: var(--red-500) transparent;
-}
-
-.app-input-container .app-tooltip-container span {
-  background: var(--red-500);
-  color: var(--white);
-}
-
-.app-input-container .app-tooltip-container span::before {
-  border-color: var(--red-500) transparent;
-}

@@ -1,0 +1,73 @@
+@keyframes modal-frame-fadein {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
+  }
+}
+
+.app-modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 2rem;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-modal {
+  background-color: var(--white);
+  border-radius: 0.875rem;
+
+  width: 540px;
+  height: 480px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--black);
+
+  animation: modal-frame-fadein 0.2s;
+}
+
+.app-modal button {
+  align-self: flex-end;
+  margin: 0.5rem 0.5rem 0 0;
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+  border: 0ch;
+  background: transparent;
+  color: var(--red-500);
+  transition: filter 0.2s;
+}
+
+.app-modal button:hover {
+  filter: brightness(50%);
+  background-color: transparent;
+}
+
+.app-modal h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.app-modal .app-modal-content {
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem;
+}

@@ -6,8 +6,8 @@ import {
 } from '../../hooks/workHours'
 
 describe('useWorkHoursUtils hook', () => {
-  it('the data should be formatted from a given input', async () => {
-    const { result, waitForValueToChange, unmount } = renderHook(useWorkHoursUtils, {
+  it('the data should be formatted from a given input', () => {
+    const { result, } = renderHook(useWorkHoursUtils, {
       wrapper: WorkHoursUtilsContextProvider
     })
 
@@ -47,12 +47,10 @@ describe('useWorkHoursUtils hook', () => {
         }
       ])
     )
-
-    unmount()
   })
 
-  it('should give an error if the given workHours are not as expected', async () => {
-    const { result, unmount } = renderHook(useWorkHoursUtils, {
+  it('should give an error if the given workHours are not as expected', () => {
+    const { result } = renderHook(useWorkHoursUtils, {
       wrapper: WorkHoursUtilsContextProvider
     })
 
@@ -67,12 +65,10 @@ describe('useWorkHoursUtils hook', () => {
     })
 
     expect(error).toHaveProperty('message', 'Bad file format!')
-
-    unmount()
   })
 
-  it('should give an error if the start time is higher than end time', async () => {
-    const { result, unmount } = renderHook(useWorkHoursUtils, {
+  it('should give an error if the start time is higher than end time', () => {
+    const { result } = renderHook(useWorkHoursUtils, {
       wrapper: WorkHoursUtilsContextProvider
     })
 
@@ -87,7 +83,5 @@ describe('useWorkHoursUtils hook', () => {
     })
 
     expect(error).toHaveProperty('message', 'Start time is greater than end time (MO 12:00-11:00)')
-
-    unmount()
   })
 })

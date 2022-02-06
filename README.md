@@ -26,6 +26,18 @@ STEVE=MO10:00-12:00,TU10:00-12:00,TH02:00-07:00,SA15:00-18:00,SU20:00-22:00
 expected output: The amount to pay STEVE is: 245 USD
 ```
 
+These are the payment rules:
+
+Monday - Friday
+- 00:01 - 09:00 -> 25 USD p/ hour
+- 09:01 - 18:00 -> 15 USD p/ hour
+- 18:01 - 00:00 -> 20 USD p/ hour
+
+Saturday and Sunday
+- 00:01 - 09:00 -> 30 USD p/ hour
+- 09:01 - 18:00 -> 20 USD p/ hour
+- 18:01 - 00:00 -> 25 USD p/ hour
+
 ### Okay, but how do I run your project?
 
 You'll need:
@@ -56,6 +68,8 @@ It should output the final code at the `dist` folder, which will be created in t
 
 ## Technical details
 
+This project whas masde using Javascript (ES6+), React and Jest, built-in-hands with the help of `webpack` and `babel` modules. No auxiliary modules were used to make this application possible out which I quoted and some for testing.
+
 ## Architecture and related
 
 I used an architecture aimed at `DDD` where the instructions describe the data, as well; the tests are also focused for these small functionalities. For it's behavior I used the `chain of responsability`, where I create pipelines to output a result.
@@ -64,11 +78,11 @@ For the structure, I choose a very friendly one (which are present on most `DDD`
 
 ### Some specific components
 
-For the `FileInput` component I used the `React.forwardRef` function so components which use this input as a child can access the `inputFile value` from it's `ref`.
+For the `<FileInput/>` and `<Modal/>` components I used the `React.forwardRef()` function so components which use this input as a child can access the `inputFile` value and `openModal()` function with `React.useRef()`.
 
-The `Toast` and `WorkHours` components contains animations of `CSS Keyframes`, where I use it to make the fadeins/fadeouts.
+The `<Toast/>` and `<WorkHours/>` components contains animations of `CSS Keyframes`, where I use it to make the fadeins/fadeouts.
 
-For `toasters` and `work hours calcs.` I used the `React contexts` for split the responsabilities (cause the `WorkHours` component are not responsible to calculate it, but to render it, for example).
+For `toasters` and `work hours utils.` I used the `React Contexts` for split the responsabilities (cause the `<WorkHours/>` is not responsible to calculate it, but to render it, for example).
 
 ### Why not Typescript instead of Javascript?
 
@@ -80,4 +94,4 @@ I wrote some `unit tests` using the `jest library` for the functionalities of th
 
 ### Okay, did you copied any modules?
 
-Nope. The `CSS animations`, the `toaster system`, the effects (etc) were all written by me, and they were not stolen from some existing module on the internet, but the Documentation for Jest and StackOverflow helped me a little with coding.
+Nope. The `CSS animations`, the `toasters`, the effects (etc) were all written by me, and they were not stolen from some existing module on the internet, but the Documentation for Jest and StackOverflow helped me a little with coding the tests.
