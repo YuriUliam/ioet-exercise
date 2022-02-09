@@ -4,7 +4,7 @@
 
 .app-tooltip-container span {
   width: 160px;
-  background: var(--gray-50);
+  background: var(--gray-100);
   padding: 8px;
   border-radius: 4px;
   font-size: 14px;
@@ -24,7 +24,7 @@
 .app-tooltip-container span::before {
   content: '';
   border-style: solid;
-  border-color: var(--gray-150) transparent;
+  border-color: var(--gray-100) transparent;
   border-width: 6px 6px 0 6px;
   bottom: 20px;
   top: 100%;

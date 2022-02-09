@@ -54,7 +54,7 @@ export function Toast({ message }) {
     >
       {icons[message.type || 'info']}
 
-      <div>
+      <div data-testid="toast-item-title-description-container">
         <strong data-testid="toast-item-component-title">{message.title}</strong>
         {message.description && (
           <p data-testid="toast-item-component-description">
@@ -67,7 +67,7 @@ export function Toast({ message }) {
         data-testid="toast-item-component-button"
         onClick={() => removeToast(message.id)} type="button"
       >
-        <XCircleInfo width={18} height={18} />
+        <XCircleInfo width={20} height={20} />
       </button>
     </div>
   )

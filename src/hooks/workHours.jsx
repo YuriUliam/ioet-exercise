@@ -10,6 +10,10 @@ import {
   getHourRangeIndex
 } from '../utils/date'
 
+import {
+  parseStringWithRegEx
+} from '../utils/string'
+
 const WorkHoursUtilsContext = createContext({})
 
 export function WorkHoursUtilsContextProvider({ children }) {
@@ -61,10 +65,13 @@ export function WorkHoursUtilsContextProvider({ children }) {
   /** Handle the hours worked from a single day of the week. */
   const handleWorkHoursPerDay = useCallback(workHoursLineData => {
     // Easily extracting the data required by using the RegEx.
-    const [weekDay, startHour, startMin, endHour, endMin] = workHoursLineData
-      .replace(workHourRegex, (_regex, ...args) => args.join(' '))
-      .split(/\s/)
-      .slice(0, 5)
+    const [
+      weekDay,
+      startHour,
+      startMin,
+      endHour,
+      endMin
+    ] = parseStringWithRegEx(workHoursLineData, workHourRegex)
 
     const {
       paymentRangeValues,
@@ -85,8 +92,7 @@ export function WorkHoursUtilsContextProvider({ children }) {
       throw new Error(`Start time is greater than end time (${weekDay} ${startTime}-${endTime})`)
     }
 
-    // If the reported periods are different
-    // it will intersect both to pay the amount due.
+    // If the reported periods are different it will intersect both to pay the amount due.
     if (startTimeRangeIndex !== endTimeRangeIndex) {
       for (let i = startTimeRangeIndex - 1; i < endTimeRangeIndex; i++) {
         const time1 = i < startTimeRangeIndex ? startTime : paymentRanges[i]

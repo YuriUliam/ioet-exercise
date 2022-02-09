@@ -9,8 +9,6 @@ import {
 import AlertCircleIcon from '../../assets/icons/alert-circle.svg'
 import FileTextIcon from '../../assets/icons/file-text.svg'
 
-import { Tooltip } from '../ToolTip'
-
 import './styles.css'
 
 export const FileInput = forwardRef(({
@@ -69,14 +67,12 @@ export const FileInput = forwardRef(({
       <p data-testid="file-input-component-title">
         {error ? error : inputFile?.name ? `File loaded (${inputFile.name})` : title}
         {error ? (
-          <Tooltip title={error}>
-            <AlertCircleIcon
-              color="#ff5050"
-              title={error}
-              width={20}
-              height={20}
-            />
-          </Tooltip>
+          <AlertCircleIcon
+            color="#ff5050"
+            title={error}
+            width={20}
+            height={20}
+          />
         ) : (
           <FileTextIcon
             color="#000000"
@@ -89,6 +85,7 @@ export const FileInput = forwardRef(({
         id={name}
         name={name}
         type="file"
+        onFocus={handleInputFocus}
         onChange={handleChangeFileInput}
         ref={inputRef}
         data-testid="file-input-component-element"
